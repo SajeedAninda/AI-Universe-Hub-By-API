@@ -48,7 +48,7 @@ let loadCards = async (isShowAll, shouldSort = false) => {
                         </div>
                     </div>
                     <div class="bottom-right">
-                        <a href="" class="text-[#EB5757] font-bold text-lg hover:underline">Details</a>
+                        <button onclick="cardDetails('${cards.id}')" href="" class="text-[#EB5757] font-bold text-lg hover:underline">Details</button>
                     </div>
                 </div>
             </div>
@@ -56,6 +56,17 @@ let loadCards = async (isShowAll, shouldSort = false) => {
         cardsContainer.appendChild(newDiv);
     })
 }
+
+let cardDetails = async (cardID) => {
+    url = `https://openapi.programming-hero.com/api/ai/tool/${cardID}`;
+    let res = await fetch(url);
+    let data = await res.json();
+    console.log(data);
+
+
+    ai_modal.showModal()
+}
+
 
 let handleShowAllBtn = (isShowAll) => {
     loadCards(isShowAll);
