@@ -1,9 +1,22 @@
-let loadCards = async () => {
+let loadCards = async (isShowAll) => {
     url = "https://openapi.programming-hero.com/api/ai/tools";
     let res = await fetch(url);
     let data = await res.json();
     let cardsArray = data?.data?.tools;
     let cardsContainer = document.querySelector("#cards-container");
+
+    let showAllBtnContainer = document.querySelector("#show-all-btn-container");
+    if (cardsArray.length > 6 && !isShowAll) {
+        showAllBtnContainer.classList.remove('hidden');
+    }
+    else {
+        showAllBtnContainer.classList.add('hidden');
+    }
+    if (!isShowAll) {
+        cardsArray = cardsArray.slice(0, 6);
+    }
+
+
     cardsArray.forEach(cards => {
         let newDiv = document.createElement("div");
         newDiv.innerHTML = `
@@ -37,6 +50,10 @@ let loadCards = async () => {
         `
         cardsContainer.appendChild(newDiv);
     })
+}
+
+let handleShowAllBtn = (isShowAll) => {
+    loadCards(isShowAll);
 }
 
 loadCards();
