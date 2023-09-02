@@ -30,15 +30,17 @@
     </div>
 
     <!-- Open the modal using ID.showModal() method -->
-    <button class="btn" onclick="ai_modal.showModal()">open modal</button>
-    <dialog id="ai_modal" class="modal modal-bottom sm:modal-middle">
-        <form method="dialog" class="modal-box">
-            <h3 class="font-bold text-lg">Hello!</h3>
-            <p class="py-4">Press ESC key or click the button below to close</p>
+    <dialog id="ai_modal" class="modal modal-bottom sm:modal-middle ">
+        <form method="dialog" class="modal-box max-w-none w-9/12 h-[520px] flex items-center flex-col">
+            <div class="flex justify-center items-center">
+                <div id="modal-container" class="w-[70%] flex justify-center items-center gap-8">
+                    
+                </div>
+            </div>
             <div class="modal-action">
                 <!-- if there is a button in form, it will close the modal -->
                 <button class="btn">Close</button>
-            </div>
+              </div>
         </form>
     </dialog>
 
