@@ -25,7 +25,7 @@ let loadCards = async (isShowAll, shouldSort = false) => {
     cardsArray.forEach(cards => {
         let newDiv = document.createElement("div");
         newDiv.innerHTML = `
-        <div class="w-96 border flex flex-col justify-center p-4 rounded-xl border-gray-400">
+        <div class="border flex flex-col justify-center p-4 rounded-xl border-gray-400">
                 <div class="top-section space-x-2 border-b border-gray-400">
                     <div class="img-section">
                         <img class="w-[350px] h-[200px] rounded-xl" src="${cards?.image}" alt="">
@@ -69,9 +69,9 @@ let cardDetails = async (cardID) => {
     // console.log(modalContainer);
     modalContainer.innerHTML=   `
     <div class="flex justify-center items-center">
-    <div class="left bg-[#eb57570d] rounded-xl py-6 px-4 flex flex-col justify-center items-center flex-1 space-y-8 w-[450px] h-[400px]">
+    <div class="left bg:white lg:bg-[#eb57570d] rounded-xl py-6 px-4 flex flex-col justify-center items-center flex-1 space-y-8 w-[320px] h-[320px] lg:w-[450px] lg:h-[400px]">
         <div class="top">
-            <h3 class="text-lg font-bold text-[#111]">${cardDetailedData?.description}</h3>
+            <h3 class="text-sm lg:text-lg font-bold text-[#111]">${cardDetailedData?.description}</h3>
         </div>
 
 
@@ -120,7 +120,7 @@ let cardDetails = async (cardID) => {
 
 
 
-<div class="right flex-1 border rounded-xl border-gray-400 py-6 px-4 w-[450px] h-[400px] flex flec-col items-center justify-center text-center">
+<div class="right flex-1 border rounded-xl border-gray-400 py-6 px-4  w-[450px] h-[400px] flex flec-col items-center justify-center text-center">
     <div>
         <img class="w-[9/12] h-[9/12]" src="${cardDetailedData.image_link[0]}" alt="">
         <h2 class="text-xl font-bold text-[#111]">
